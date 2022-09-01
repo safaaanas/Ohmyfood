@@ -42,3 +42,38 @@ header {
     height: 35px;
     margin-top: 6%;
 }
+
+div {
+    display: block;
+}
+
+.main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.location {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #f3f3f3;
+    color: #7a7a7a;
+}
+
+
+.fas {
+    font-weight: 900;
+}
+
+.location__city {
+    margin-left: 13px;
+    font-weight: 400;
+}
+
+p {
+    display: block;
+    margin-block-start: 17px;
+    margin-block-end: 17px;
+}
