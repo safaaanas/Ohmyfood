@@ -77,3 +77,35 @@ p {
     margin-block-start: 17px;
     margin-block-end: 17px;
 }
+
+.section1 {
+    background: #f2f2f2;
+    width: 100%;
+}
+
+.section1__container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 50px 0;
+}
+
+.section1__title {
+    text-align: center;
+    max-width: 250px;
+    margin: 0;
+}
+
+.section1__text {
+    text-align: center;
+}
+
+.section1__button {
+    background: linear-gradient(180deg, #ff79da 0%, #9356dc 100%);
+    color: white;
+    padding: 0 20px;
+    border-radius: 200px;
+    font-weight: bold;
+}
