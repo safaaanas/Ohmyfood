@@ -243,3 +243,48 @@ h2 {
     position: relative;
     font-size: 30px;
 }
+
+footer {
+    background-color: #282828;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.footer__bloc {
+    display: inline;
+    padding: 0 40px;
+    width: 100%;
+}
+
+.footer_title {
+    font-weight: bold;
+    font-family: shrikhand;
+    color: white;
+    font-size: 20px;
+    ;
+}
+
+.footer__bloc-links {
+    display: inline-flex;
+    flex-direction: column;
+    width: auto;
+    list-style-type: none;
+}
+
+.footer__bloc-link {
+    display: inline-flex;
+    flex-direction: row;
+    align-items: center;
+    text-align: center;
+    color: white;
+    height: 30px;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.footer__bloc-links i {
+    margin-right: 7px;
+    color: white;
+}
