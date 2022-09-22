@@ -1,3 +1,13 @@
 .logo {
     height: 30%;
 }
+
+@keyframes disappear {
+    0% {
+        transform: scale(1);
+    }
+
+    100% {
+        transform: scale(0);
+    }
+}
