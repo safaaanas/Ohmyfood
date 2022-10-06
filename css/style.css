@@ -26,25 +26,25 @@ body {
 /*Loader*/
 .loader {
     display: flex;
-    justify-content: center;
+    justify-content: space-evenly;
+    align-items: center;
     background-color: #F6F6F6;
     position: fixed;
     height: 100%;
     inset: 0;
     z-index: 1;
+    animation: disappear 1s 1.5s forwards;
     opacity: 0.9;
-    animation: disappear 3s;
-    animation-fill-mode: forwards;
-    animation-delay: 3s
+
 }
 
 @keyframes disappear {
-    from {
-        transform: scale(1);
+    0% {
+        z-index: 1;
     }
 
-    to {
-        transform: scale(0);
+    100% {
+        z-index: -99;
     }
 }
 
@@ -121,6 +121,7 @@ p {
     display: block;
     margin-block-start: 17px;
     margin-block-end: 17px;
+    font-size: 14px;
 }
 
 /*Section1*/
@@ -149,11 +150,15 @@ p {
 }
 
 .section1__button {
-    background: linear-gradient(180deg, #ff79da 0%, #9356dc 100%);
+    background: linear-gradient(to top left, #9356dc, #ff79da);
     color: white;
     padding: 0 20px;
     border-radius: 200px;
     font-weight: bold;
+}
+
+.section1__button:hover {
+    box-shadow: 0.4rem 0.4rem 15px rgb(0 0 0 / 50)
 }
 
 /*Functioning*/
@@ -187,6 +192,12 @@ p {
     border-radius: 20px;
     margin: 10px;
     box-shadow: 0px 0px 10px 0px rgb(0 0 0 / 16%)
+}
+
+.functioning__steps:hover {
+    cursor: pointer;
+    box-shadow: 0.4rem 0.4rem 15px rgb(0 0 0 / 50%);
+    background-color: #f3f3f3;
 }
 
 .functioning__number {
@@ -224,7 +235,7 @@ h2 {
     font-size: 1.5em;
     margin-block-start: 0.83em;
     margin-block-end: 0.83em;
-    margin-inline-start: 0px;
+    margin-inline-start: 16px;
     margin-inline-end: 0px;
     font-weight: bold;
 }
@@ -272,6 +283,10 @@ h2 {
     height: 90px;
 }
 
+.card__content {
+    margin-left: 10px;
+}
+
 .card__title {
     margin: 0 0 4px;
 }
@@ -301,7 +316,7 @@ h2 {
     background-clip: text;
     -webkit-background-clip: text;
     opacity: 0;
-    transition: all 200ms;
+    transition: all 0.2s;
     font-size: 30px;
 
 }
@@ -351,17 +366,21 @@ footer {
     text-decoration: none;
 }
 
+.footer__bloc-link:hover {
+    text-decoration: underline;
+
+}
+
 .footer__bloc-links i {
     margin-right: 7px;
     color: white;
 }
 
-/*Page1*/
+/*Pages*/
 .header__arrow {
     position: absolute;
-    left: 23px;
-    top: 4%;
     font-size: 20px;
+    margin: 28px 0 0 20px;
 }
 
 .header__link {
@@ -397,16 +416,21 @@ footer {
 }
 
 .menu__title__icone {
-    display: block;
-}
-
-.menu__title__icone .fa-heart {
-    top: 0.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 19px 28px 0px 0px;
 }
 
 .menu__title__h2 {
     font-family: 'Shrikhand';
     margin-bottom: 0;
+}
+
+.menu__card__bloc {
+    max-width: 100%;
+    overflow: hidden;
+    padding: 0 1rem;
 }
 
 .menu__card__title {
@@ -420,38 +444,164 @@ footer {
     row-gap: 16px;
 }
 
-.menu__card__detail {
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    align-items: end;
-    height: 85px;
-    border-radius: 15px;
-    background-color: white;
-    box-shadow: 5px 5px 15px 5px rgb(0 0 0 / 10%);
-    position: relative;
-    overflow: hidden;
-    margin: 10px 0 10px 0;
+.menusdetails--1 {
+    height: 400px;
 }
+
+
+
+
+.menu__card__detail {
+    background-color: #fff;
+    padding: 1rem;
+    display: flex;
+    border-radius: 0.75rem;
+    margin: 1rem 0;
+    box-shadow: 0.25rem 0.25rem 1rem rgb(0 0 0 / 10%);
+    overflow: hidden;
+    cursor: pointer;
+    animation: itemAppear 1s;
+    animation-fill-mode: both;
+    animation-timing-function: cubic-bezier(.5, 1.58, .34, .82);
+    width: 100%;
+    opacity: 0;
+}
+
+/*Animation Menu*/
+@keyframes itemAppear {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+.delay-0 {
+    animation-delay: 0.1s;
+}
+
+.delay-1 {
+    animation-delay: 0.3s;
+}
+
+.delay-2 {
+    animation-delay: 0.5s;
+}
+
+.delay-3 {
+    animation-delay: 0.7s;
+}
+
+.delay-4 {
+    animation-delay: 0.9s;
+}
+
+.delay-5 {
+    animation-delay: 1.1s;
+}
+
+.delay-6 {
+    animation-delay: 1.3s;
+}
+
+.delay-7 {
+    animation-delay: 1.5s;
+}
+
+.delay-8 {
+    animation-delay: 1.7s;
+}
+
+.delay-9 {
+    animation-delay: 1.9s;
+}
+
+
 
 .menu__card__content {
     white-space: nowrap;
+    text-overflow: ellipsis;
     overflow: hidden;
-    margin: 15px 0 0 3px
+    width: 80%;
 }
 
 .menu__card__name {
     font-weight: bold;
+    margin: 0;
+    font-size: 16px;
 }
 
 .menu__card__subtitle {
+    margin: 0;
+    white-space: nowrap;
     text-overflow: ellipsis;
+    overflow: hidden;
+    font-size: 13px;
 }
 
 .menu__card__price {
-    padding-right: 20px;
-    font-weight: bold;
-    padding-left: 7px;
+    font-weight: 700;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    padding-left: 0.5rem;
+    width: 20%;
+    font-size: 14px;
+}
+
+
+
+/*Animation Price*/
+
+.menu__card__confirmation {
+    background-color: #99e2d0;
+    margin: -1rem -5rem -1rem 1rem;
+    width: 4rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition-duration: .5s;
+
+}
+
+.menu__card__detail:hover .menu__card__confirmation {
+    margin-right: -1rem;
+}
+
+
+
+.menu__card__wrapicon {
+    height: 1.6rem;
+    width: 1.6rem;
+    background-color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 100px;
+    transform: rotate(180deg);
+    transition-duration: .5s;
+}
+
+.menu__card__detail:hover .menu__card__wrapicon {
+    transform: rotate(0);
+}
+
+
+.menu__card__icon {
+    color: #99e2d0;
+
+}
+
+@keyframes wrapicon {
+    from {
+        transform: rotate(0);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
 }
 
 .menu__contain-button {
@@ -460,6 +610,7 @@ footer {
     align-items: center;
     width: 100%;
 }
+
 
 .menu__button {
     background: linear-gradient(180deg, #ff79da 0%, #9356dc 100%);
@@ -472,6 +623,57 @@ footer {
     font-size: 18px;
 }
 
-.p {
-    text-overflow: ellipsis;
+/* Responsive TABLETTE */
+
+@media screen and (min-width: 1024px) {
+    .section1__title {
+        max-width: 40%
+    }
+
+    .functioning__step {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .functioning__steps {
+        width: 30%;
+    }
+
+
+
+    .cards {
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 2rem;
+    }
+
+    .card {
+        width: 48%;
+    }
+
+    .footer__bloc-links {
+        display: flex;
+        justify-content: space-between;
+        flex-direction: row;
+
+    }
+
+    /* PAGES */
+
+    .menu__card {
+        display: flex;
+        flex-direction: row;
+    }
+
+    .menu__card__bloc {
+        width: 40%;
+    }
+
+    .card__img {
+        height: 340px;
+    }
+
+    .header__logo {
+        margin-top: 2%;
+    }
 }
